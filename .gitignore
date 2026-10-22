@@ -1,0 +1,30 @@
+# Binaries and build outputs
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Databases and runtime data
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+runtime.json
+logs/
+*.log
+
+# Temp files
+tmp/
+*.tmp
+spikes/bin/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Git worktrees
+.worktrees/

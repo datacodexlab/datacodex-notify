@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Version from the tag
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart("v")
+          "VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+      - name: Test
+        run: go test -short ./...
+      - name: Build, installer, and portable zip
+        shell: pwsh
+        run: ./installer/build.ps1 -Version $env:VERSION
+      - name: Checksums
+        shell: pwsh
+        working-directory: dist
+        run: |
+          Get-FileHash *.exe, *.zip -Algorithm SHA256 | ForEach-Object { "{0}  {1}" -f $_.Hash.ToLower(), (Split-Path $_.Path -Leaf) } | Out-File -FilePath SHA256SUMS -Encoding ascii
+      - name: Publish the GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ github.ref_name }}" "dist/DatacodexNotify-Setup-$env:VERSION.exe" "dist/DatacodexNotify-Portable-$env:VERSION.zip" dist/SHA256SUMS --title "${{ github.ref_name }}" --generate-notes

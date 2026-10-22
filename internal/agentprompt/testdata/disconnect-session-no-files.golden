@@ -1,0 +1,11 @@
+You are about to disconnect the agent session `s1` from DataCodex Notify. Do exactly the following and nothing else.
+
+1. No rules file was recorded for this session. Look for the block that starts with the line `<!-- datacodex-notify:start v1 -->` and ends with the line `<!-- datacodex-notify:end -->` in the usual rules files (see below), and delete only that block (both marker lines included).
+   - `CLAUDE.md` in the `.claude` folder of the user's home folder, and `CLAUDE.md` in the current project
+   - `AGENTS.md` in the `.codex` folder of the user's home folder, and `AGENTS.md` in the current project
+   - `GEMINI.md` in the `.gemini` folder of the user's home folder, and `GEMINI.md` in the current project
+   - any other rules file the user names
+2. Stop any heartbeat you started for this session. The `disconnect` command in the next step also removes the session's heartbeats.
+3. Run `C:\Users\demo\AppData\Local\Programs\DatacodexNotify\datacodex-notify-cli.exe disconnect --source codex --session s1`.
+4. Do not send any more notifications in this session.
+5. Reply with the list of files you changed and the exit code of the `disconnect` command.

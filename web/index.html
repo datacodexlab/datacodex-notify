@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>DataCodex Notify</title>
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-red-32.png" id="favicon">
+<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-red-256.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2F6BFF">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <span id="state-dot" class="dot dot-red" aria-hidden="true"></span>
+    <h1 class="title">DataCodex Notify</h1>
+    <span id="state-label" class="state-label"></span>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" role="tab" data-tab="home" data-i18n="tabs.home" type="button"></button>
+    <button class="tab" role="tab" data-tab="agents" data-i18n="tabs.agents" type="button"></button>
+    <button class="tab" role="tab" data-tab="alerts" data-i18n="tabs.alerts" type="button"></button>
+    <button class="tab" role="tab" data-tab="voice" data-i18n="tabs.voice" type="button"></button>
+    <button class="tab" role="tab" data-tab="settings" data-i18n="tabs.settings" type="button"></button>
+  </nav>
+
+  <main class="content">
+    <section id="view-home" class="view" role="tabpanel"></section>
+    <section id="view-agents" class="view" role="tabpanel" hidden></section>
+    <section id="view-alerts" class="view" role="tabpanel" hidden></section>
+    <section id="view-voice" class="view" role="tabpanel" hidden></section>
+    <section id="view-settings" class="view" role="tabpanel" hidden></section>
+    <section id="view-session" class="view" role="alert" hidden></section>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

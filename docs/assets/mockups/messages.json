@@ -1,0 +1,54 @@
+{
+  "ar": [
+    {
+      "kind": "codex-info",
+      "text": "🟢 *كودكس* · acme-shop\n━━━━━━━━━━━━━━\n📌 *انتهت المرحلة ٣*\n\nتم دمج الفرع والكود جاهز للمراجعة\n\n▫️ *المرحلة:* 3 / 5\n▫️ *الاختبارات:* 42 ✓\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "claude-warning",
+      "text": "🟠 *Claude Code* · data-pipeline · تحذير\n━━━━━━━━━━━━━━\n📌 *فشل اختباران*\n\nاختبارات الدفع بتفشل بعد آخر تعديل\n\n▫️ *الاختبارات:* 2 ✕\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "codex-critical",
+      "text": "🚨 *كودكس* · acme-shop · عاجل\n━━━━━━━━━━━━━━\n📌 *البناء متوقف*\n\nمحتاج موافقتك علشان أكمل\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "heartbeat-lost",
+      "text": "💀 *Claude Code* · data-pipeline · انقطاع المراقب\n━━━━━━━━━━━━━━\nالجلسة وقفت عن التبليغ\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "digest",
+      "text": "🟢 *معلومة* · digest\n━━━━━━━━━━━━━━\nرسائل محجوزة أثناء ساعات الهدوء: 2\n\n🟢 *كودكس* · acme-shop\nخطوة ٤ خلصت\n\n🟢 *Claude Code* · data-pipeline\nخطوة ٥ خلصت\n━━━━━━━━━━━━━━\n🕐 07:30 · 22/10"
+    },
+    {
+      "kind": "voice-speech",
+      "text": "رسالة من كودكس في مشروع 'acme-shop'"
+    }
+  ],
+  "en": [
+    {
+      "kind": "codex-info",
+      "text": "🟢 *Codex* · acme-shop\n━━━━━━━━━━━━━━\n📌 *Phase 3 finished*\n\nMerged the branch and the checkout flow is ready for review.\n\n▫️ *Phase:* 3 / 5\n▫️ *Tests:* 42 ✓\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "claude-warning",
+      "text": "🟠 *Claude Code* · data-pipeline · Warning\n━━━━━━━━━━━━━━\n📌 *Two tests failed*\n\nThe payment tests fail after the last refactor.\n\n▫️ *Tests:* 2 ✕\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "codex-critical",
+      "text": "🚨 *Codex* · acme-shop · Critical\n━━━━━━━━━━━━━━\n📌 *Build is blocked*\n\nNeeds your approval to continue with the migration.\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "heartbeat-lost",
+      "text": "💀 *Claude Code* · data-pipeline · Heartbeat Lost\n━━━━━━━━━━━━━━\nThe session stopped reporting. Last beat: 10:31.\n━━━━━━━━━━━━━━\n🕐 10:42 · 21/10"
+    },
+    {
+      "kind": "digest",
+      "text": "🟢 *Info* · digest\n━━━━━━━━━━━━━━\nHeld during quiet hours: 2 message(s)\n\n🟢 *Codex* · acme-shop\nStep 4 finished.\n\n🟢 *Claude Code* · data-pipeline\nStep 5 finished.\n━━━━━━━━━━━━━━\n🕐 07:30 · 22/10"
+    },
+    {
+      "kind": "voice-speech",
+      "text": "Message from Codex, project acme-shop. Build is blocked."
+    }
+  ]
+}

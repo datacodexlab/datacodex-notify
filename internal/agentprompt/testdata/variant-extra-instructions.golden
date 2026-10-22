@@ -1,0 +1,80 @@
+You are about to connect this agent to DataCodex Notify, a local app that sends WhatsApp notifications from long sessions. Do exactly the following, once, and do not do anything else.
+
+1. Open this rules file: `CLAUDE.md` inside the `.claude` folder of the user's home folder (create it if it does not exist).
+2. Write the block below into that file. The block starts with the line `<!-- datacodex-notify:start v1 -->` and ends with the line `<!-- datacodex-notify:end -->`. If the file already contains these markers, replace everything from the start marker to the end marker (both lines included) with the new block. Never add a second block, and do not change anything outside the markers.
+3. Do not run any `datacodex-notify` command now. Notifications stay OFF until they are activated as the block describes.
+4. Reply with the absolute path of every file you changed, and nothing else.
+
+The block to write (copy it exactly, including the two marker lines):
+
+````markdown
+<!-- datacodex-notify:start v1 -->
+## DataCodex Notify (WhatsApp notifications)
+
+**Who this applies to.** Only the main (manager or reviewer) session follows this block. If you are a subagent, an implementer, a delegate, or any session started by another agent, ignore this whole block and never call DataCodex Notify.
+
+**Tool.** Use the `datacodex-notify` skill for every command, option, and exit code. The console program is `C:\Users\demo\AppData\Local\Programs\DatacodexNotify\datacodex-notify-cli.exe`; always call it by this full path.
+
+### One-off message or task activation
+There are two different cases. Never mix them up.
+- **A one-off message the user asks for directly** (for example "send me a test message" or "message me when this is done"): run only `send` with `--wait 20`. Do **not** run `connect`, `disconnect`, or `heartbeat` for it. Add `--session <name>` only if a session is already active in this conversation. Never connect and disconnect around a single message.
+- **Activating notifications for a task or a conversation**: `connect` **once**, as described below, then use the same session name for the whole conversation. Disconnect only when the user says a deactivation phrase or when the task ends.
+
+### Switching notifications on and off
+Notifications are **OFF** for every session until they are activated.
+- Activate only when the user asks, for example with one of: "notify on", "start alerts".
+- For a long task you may suggest once, in a single short line, that notifications can be turned on. Do not suggest again in the same session, and never turn them on yourself.
+- Deactivate when the user says one of: "notify off", "stop alerts".
+
+**To activate:**
+1. Pick a unique session name once: the project name plus a short random suffix, for example `myproject-k7f2`. Reuse exactly this name for the whole conversation; never pick a new one.
+2. Run `connect` with `--source claude-code`, that session name, `--project` with the project name (see "The project name" below), and `--rules-file` with the absolute path of every rules file that contains this block (the file you are reading now, and any other copy you know of).
+3. If the program exits with code 6, notifications were turned off by the user: stop here and do not try again in this session.
+4. Start the heartbeat (see below).
+
+**To deactivate** (only on a deactivation phrase, or when the task ends): stop the heartbeat, run `disconnect` once with the same session name, and send nothing more in this session.
+
+### What to report
+| Event | Level | Mode flag |
+|-------|-------|-----------|
+| A task starts (include a short plan summary and the number of steps) | info | --mode text |
+| The task is finished (short summary and the next step) | info | --mode text |
+| A build or test fails, or an error stops progress | warning | --mode text |
+| You are blocked or need the user's approval to continue | warning | --mode text |
+| A stop condition: three failed builds in a row, a broken core feature, or a security problem | critical | --mode both |
+| A phase, review gate, or group of steps is finished | info | --mode text |
+| An implementer or delegate reported a STOP, or the executor was switched because of a quota | warning | --mode text |
+
+Do not report anything else. Always pass `--session` with your session name; the session remembers the project, so only `connect` needs `--project`. A one-off `send` without a session may pass `--project <folder name>` itself. Messages show the agent and the project in their header.
+
+### The project name
+`--project` is the name of the git repository root folder of the work you are doing (the last part of `git rev-parse --show-toplevel`). If the work is not in a git repository, use the name of the working folder. If that name looks temporary (a temp or cache folder, a random or generated name, a pasted-files folder) or there is no real project, leave `--project` out.
+
+### Writing the messages
+- Write every notification in short Egyptian Arabic (colloquial, plain words).
+- Keep the body to one to three lines: what happened and what you need from the user, if anything.
+- Use `--title` for a one-line summary (up to 120 characters) and `--field "key=value"` (repeatable, at most 8, key up to 40 and value up to 200 characters) for short facts such as the phase, the test result, or the step. Do not put formatting marks (`*`, `_`, `~`, backticks) in a title or a field; they are shown as plain text.
+- Never include code, file contents, secrets, tokens, passwords, or customer data.
+- Use `--source claude-code` on every command, the same value you gave to `connect`. The project is already in the session name.
+
+### Never let notifications get in the way
+A failed notification must never fail, block, or delay your work.
+- Exit 0: sent (or held on purpose). Exit 5: duplicate or rate limited; not an error.
+- Exit 2: the app is not running. Continue the task and mention it once in your final report.
+- Exit 3: authentication failed. Continue and mention it in your final report. Do not try to fix it.
+- Exit 4: the command was invalid. Fix it and try once more.
+- Exit 7: only with `--wait`: the message is still queued after the wait. Not an error; continue.
+- Exit 6: the user turned notifications off. Stop sending notifications for the rest of this session and do not retry.
+Do not change the app, its settings, or its files.
+
+### Heartbeat
+After activating, run `heartbeat --id <session name> --every 600 --grace 300 --label "<project name>" --source claude-code --session <session name>`.
+While you work, run `heartbeat --id <session name> --session <session name>` again at least every 600 seconds (for example after every step). If you stop reporting in, the user is alerted.
+When the task ends, or when you deactivate, run `heartbeat-stop --id <session name>`.
+
+### Additional instructions from the user
+Only notify for tasks longer than ten minutes.
+Use `code` sparingly.
+<!-- datacodex-notify:end -->
+
+````

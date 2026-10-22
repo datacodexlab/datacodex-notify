@@ -1,0 +1,45 @@
+{
+  "levels": {
+    "info": "Info",
+    "warning": "Warning",
+    "critical": "Critical",
+    "heartbeat_lost": "Heartbeat Lost"
+  },
+  "prefixes": {
+    "info": "🟢",
+    "warning": "🟠",
+    "critical": "🚨",
+    "heartbeat_lost": "💀"
+  },
+  "messages": {
+    "test_message": "Test notification from DataCodex Notify.",
+    "quiet_digest": "Held during quiet hours: {count} message(s)",
+    "quiet_digest_more": "...and {count} more message(s) not shown",
+    "agent_connected": "Agent connected: {session} ({source}).",
+    "agent_disconnected": "Agent disconnected: {session} ({source}).",
+    "voice_sample": "Hello, this is the review assistant. The task is finished and everything looks good.",
+    "heartbeat_stopped": "Reviewer stopped responding: {label} ({source}). Last beat: {time}.",
+    "heartbeat_recovered": "Reviewer is back: {label}.",
+    "disconnected_alert": "WhatsApp was disconnected from {from} to {to}.",
+    "agent_name_claude-code": "Claude Code",
+    "agent_name_codex": "Codex",
+    "agent_name_gemini": "Gemini",
+    "agent_name_other": "Agent",
+    "voice_intro": "Message from {agent}, project {project}.",
+    "voice_intro_no_project": "Message from {agent}."
+  },
+  "tray": {
+    "open": "Open Admin",
+    "send_test": "Send Test Message",
+    "pause": "Pause for 1 hour",
+    "resume": "Resume Notifications",
+    "start_with_windows": "Start with Windows",
+    "exit": "Exit",
+    "state_unlinked": "Not linked",
+    "state_connecting": "Connecting",
+    "state_connected": "Connected",
+    "state_reconnecting": "Reconnecting",
+    "state_logged_out": "Logged out",
+    "state_outdated": "Update needed"
+  }
+}

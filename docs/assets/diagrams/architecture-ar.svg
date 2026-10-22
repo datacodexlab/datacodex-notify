@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" role="img" aria-label="كل شيء يبقى على جهازك حتى تغادر الرسالة إلى واتساب." direction="rtl">
+<style>
+.node{fill:#ffffff;stroke:#c9d0da;stroke-width:1.5}
+.node.hot{fill:#eaf0ff;stroke:#2f6bff;stroke-width:2.5}
+.node.side{fill:#fff7e6;stroke:#c98a00;stroke-dasharray:5 4}
+.t1{font:600 14px "IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;fill:#14171c}
+.t2{font:12px "IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;fill:#5b6472}
+.arrow{stroke:#2f6bff;stroke-width:2.2}.arrow.dashed{stroke:#c98a00;stroke-dasharray:5 4}
+#head path{fill:#2f6bff}
+.note{font:13px "IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;fill:#5b6472}
+@media (prefers-color-scheme:dark){.node{fill:#171b21;stroke:#3a4250}.node.hot{fill:#1d2a4a;stroke:#5a8bff}.node.side{fill:#2a2412;stroke:#e3a82b}.t1{fill:#e8ebf0}.t2,.note{fill:#9aa3b2}.arrow{stroke:#5a8bff}#head path{fill:#5a8bff}}
+</style>
+<defs><marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z"/></marker></defs>
+<line class="arrow" x1="810" y1="105" x2="790" y2="105" marker-end="url(#head)"/><line class="arrow" x1="654" y1="105" x2="634" y2="105" marker-end="url(#head)"/><line class="arrow" x1="498" y1="105" x2="478" y2="105" marker-end="url(#head)"/><line class="arrow" x1="342" y1="105" x2="322" y2="105" marker-end="url(#head)"/><line class="arrow" x1="186" y1="105" x2="166" y2="105" marker-end="url(#head)"/><g><rect class="node" x="810" y="70" width="130" height="70" rx="12"/><text class="t1" x="875" y="100" text-anchor="middle">وكيل ذكاء اصطناعي</text><text class="t2" x="875" y="122" text-anchor="middle">Claude, Codex, ...</text></g><g><rect class="node" x="654" y="70" width="130" height="70" rx="12"/><text class="t1" x="719" y="100" text-anchor="middle">أداة الأوامر</text><text class="t2" x="719" y="122" text-anchor="middle">datacodex-notify-cli</text></g><g><rect class="node hot" x="498" y="70" width="130" height="70" rx="12"/><text class="t1" x="563" y="100" text-anchor="middle">التطبيق المحلي</text><text class="t2" x="563" y="122" text-anchor="middle">127.0.0.1 فقط</text></g><g><rect class="node" x="342" y="70" width="130" height="70" rx="12"/><text class="t1" x="407" y="100" text-anchor="middle">whatsmeow</text><text class="t2" x="407" y="122" text-anchor="middle">بروتوكول واتساب ويب</text></g><g><rect class="node" x="186" y="70" width="130" height="70" rx="12"/><text class="t1" x="251" y="100" text-anchor="middle">واتساب</text><text class="t2" x="251" y="122" text-anchor="middle">جهاز مرتبط</text></g><g><rect class="node" x="30" y="70" width="130" height="70" rx="12"/><text class="t1" x="95" y="100" text-anchor="middle">هاتفك</text><text class="t2" x="95" y="122" text-anchor="middle">نص + صوت</text></g><g><rect class="node side" x="478" y="210" width="170" height="64" rx="12"/><text class="t1" x="563" y="238" text-anchor="middle">Gemini TTS + ffmpeg</text><text class="t2" x="563" y="258" text-anchor="middle">رسائل صوتية (اختياري)</text></g><line class="arrow dashed" x1="563" y1="140" x2="563" y2="204" marker-end="url(#head)"/>
+<text class="note" x="480" y="318" text-anchor="middle">كل شيء يبقى على جهازك حتى تغادر الرسالة إلى واتساب.</text>
+</svg>

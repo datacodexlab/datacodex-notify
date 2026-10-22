@@ -1,0 +1,9 @@
+You are about to disconnect the agent session `myproject-k7f2` from DataCodex Notify. Do exactly the following and nothing else.
+
+1. In each of these rules files, delete only the block that starts with the line `<!-- datacodex-notify:start v1 -->` and ends with the line `<!-- datacodex-notify:end -->` (both marker lines included). Leave everything else in the file unchanged. If a file does not contain the markers, leave it alone and say so in your reply.
+   - `C:\Users\x\.claude\CLAUDE.md`
+   - `D:\work\myproject\CLAUDE.md`
+2. Stop any heartbeat you started for this session. The `disconnect` command in the next step also removes the session's heartbeats.
+3. Run `C:\Users\demo\AppData\Local\Programs\DatacodexNotify\datacodex-notify-cli.exe disconnect --source claude-code --session myproject-k7f2`.
+4. Do not send any more notifications in this session.
+5. Reply with the list of files you changed and the exit code of the `disconnect` command.

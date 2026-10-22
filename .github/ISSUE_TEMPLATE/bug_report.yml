@@ -1,0 +1,30 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include phone numbers, API keys, or tokens. For security problems use a private security advisory instead (see SECURITY.md).
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `datacodex-notify-cli version`
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version

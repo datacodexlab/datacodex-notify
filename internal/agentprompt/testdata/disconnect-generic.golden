@@ -1,0 +1,12 @@
+You are about to remove DataCodex Notify from this agent's rules. Do exactly the following and nothing else.
+
+1. Search these rules files for a block that starts with the line `<!-- datacodex-notify:start v1 -->` and ends with the line `<!-- datacodex-notify:end -->`:
+   - `CLAUDE.md` in the `.claude` folder of the user's home folder, and `CLAUDE.md` in the current project
+   - `AGENTS.md` in the `.codex` folder of the user's home folder, and `AGENTS.md` in the current project
+   - `GEMINI.md` in the `.gemini` folder of the user's home folder, and `GEMINI.md` in the current project
+   - any other rules file the user names
+2. In every file where you find the block, delete only that block (both marker lines included). Leave everything else unchanged. Do not touch files without the markers.
+3. Stop any heartbeat you started in this session.
+4. If you connected this session earlier and know its session name and source, run `C:\Users\demo\AppData\Local\Programs\DatacodexNotify\datacodex-notify-cli.exe disconnect --source <source> --session <session name>`. If you do not know them, skip this step.
+5. Do not send any more notifications in this session.
+6. Reply with the list of files you changed (or say that you found no block).

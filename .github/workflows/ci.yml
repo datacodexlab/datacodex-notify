@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: gofmt
+        shell: bash
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then
+            echo "These files need gofmt:"
+            echo "$unformatted"
+            exit 1
+          fi
+      - name: go vet
+        run: |
+          go vet ./...
+          go vet -tags devfake ./...
+      - name: go test
+        run: go test -short ./...
+      - name: go test (fake sender)
+        run: go test -short -tags devfake ./...
+      - name: Release build
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          go build -trimpath -ldflags "-s -w -H=windowsgui" -o dist/datacodex-notify.exe ./cmd/datacodex-notify
+          go build -trimpath -ldflags "-s -w" -o dist/datacodex-notify-cli.exe ./cmd/datacodex-notify-cli
+      - name: Third-party notices are current
+        run: go run ./tools/notices -check

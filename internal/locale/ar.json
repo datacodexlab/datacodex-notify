@@ -1,0 +1,45 @@
+{
+  "levels": {
+    "info": "معلومة",
+    "warning": "تحذير",
+    "critical": "عاجل",
+    "heartbeat_lost": "انقطاع المراقب"
+  },
+  "prefixes": {
+    "info": "🟢",
+    "warning": "🟠",
+    "critical": "🚨",
+    "heartbeat_lost": "💀"
+  },
+  "messages": {
+    "test_message": "رسالة تجريبية من DataCodex Notify.",
+    "quiet_digest": "رسائل محجوزة أثناء ساعات الهدوء: {count}",
+    "quiet_digest_more": "...و{count} رسائل أخرى غير معروضة",
+    "agent_connected": "تم ربط وكيل: {session} ({source}).",
+    "agent_disconnected": "تم فصل وكيل: {session} ({source}).",
+    "voice_sample": "أهلاً، أنا مساعد المراجعة. المهمة خلصت والنتيجة تمام.",
+    "heartbeat_stopped": "المراجع توقف عن الاستجابة: {label} ({source}). آخر نبضة: {time}.",
+    "heartbeat_recovered": "المراجع رجع يشتغل: {label}.",
+    "disconnected_alert": "تم قطع الاتصال بواتساب من {from} إلى {to}.",
+    "agent_name_claude-code": "Claude Code",
+    "agent_name_codex": "كودكس",
+    "agent_name_gemini": "جيميناي",
+    "agent_name_other": "وكيل",
+    "voice_intro": "رسالة من {agent} في مشروع {project}.",
+    "voice_intro_no_project": "رسالة من {agent}."
+  },
+  "tray": {
+    "open": "فتح لوحة التحكم",
+    "send_test": "إرسال رسالة تجريبية",
+    "pause": "إيقاف مؤقت لمدة ساعة",
+    "resume": "استئناف الإشعارات",
+    "start_with_windows": "بدء التشغيل مع ويندوز",
+    "exit": "خروج",
+    "state_unlinked": "غير مربوط",
+    "state_connecting": "جاري الاتصال",
+    "state_connected": "متصل",
+    "state_reconnecting": "جاري إعادة الاتصال",
+    "state_logged_out": "تم تسجيل الخروج",
+    "state_outdated": "مطلوب تحديث"
+  }
+}

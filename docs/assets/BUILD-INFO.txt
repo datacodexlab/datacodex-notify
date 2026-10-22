@@ -1,0 +1,4 @@
+commit: unreleased
+version: 1.0.0
+web_clean: true
+generated: 2026-10-22T10:34:16Z

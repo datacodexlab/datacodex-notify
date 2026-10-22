@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat mockup</title>
+<style>
+:root{--bg:#e8efe9;--bar:#1f6f5c;--bubble:#ffffff;--text:#14171c;--muted:#6b7480;--accent:#2f6bff}
+*{box-sizing:border-box}
+body{margin:0;background:#cfd8d2;font:15px/1.5 "IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;color:var(--text)}
+.phone{width:440px;margin:0 auto;background:var(--bg);min-height:100vh}
+.top{background:var(--bar);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.avatar{width:38px;height:38px;border-radius:50%;background:#ffffff33;display:flex;align-items:center;justify-content:center;font-weight:600}
+.top b{display:block;font-size:16px}.top span{font-size:12px;opacity:.8}
+.chat{padding:14px 12px 18px;display:flex;flex-direction:column;gap:10px}
+.day{align-self:center;background:#ffffffb0;border-radius:8px;padding:2px 10px;font-size:12px;color:var(--muted)}
+.bubble{background:var(--bubble);border-radius:12px;padding:9px 12px 7px;max-width:92%;align-self:flex-start;box-shadow:0 1px 1px #0000001a;word-break:break-word;white-space:normal;font-size:14.5px}
+.bubble b{font-weight:700}
+.voice{display:flex;flex-wrap:wrap;align-items:center;gap:10px;width:82%}
+.play{width:0;height:0;border-inline-start:14px solid var(--bar);border-block:9px solid transparent;margin-inline:6px 2px}
+.wave{display:flex;align-items:center;gap:2px;flex:1;height:28px}
+.wave i{display:block;width:3px;background:var(--bar);border-radius:2px;opacity:.85}
+.dur{font-size:12px;color:var(--muted)}
+.said{flex-basis:100%;font-size:12px;color:var(--muted);border-top:1px solid #0000000f;padding-top:5px}
+</style></head><body><div class="phone">
+<div class="top"><div class="avatar">D</div><div><b>Admin</b><span>DataCodex Notify</span></div></div>
+<div class="chat">
+<div class="bubble">🟢 <b>Codex</b> · acme-shop<br>━━━━━━━━━━━━━━<br>📌 <b>Phase 3 finished</b><br><br>Merged the branch and the checkout flow is ready for review.<br><br>▫️ <b>Phase:</b> 3 / 5<br>▫️ <b>Tests:</b> 42 ✓<br>━━━━━━━━━━━━━━<br>🕐 10:42 · 21/10</div>
+<div class="bubble">🟠 <b>Claude Code</b> · data-pipeline · Warning<br>━━━━━━━━━━━━━━<br>📌 <b>Two tests failed</b><br><br>The payment tests fail after the last refactor.<br><br>▫️ <b>Tests:</b> 2 ✕<br>━━━━━━━━━━━━━━<br>🕐 10:42 · 21/10</div>
+<div class="bubble voice"><div class="play"></div><div class="wave"><i style="height:6px"></i><i style="height:10px"></i><i style="height:16px"></i><i style="height:8px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:6px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:12px"></i><i style="height:8px"></i><i style="height:20px"></i><i style="height:16px"></i><i style="height:6px"></i><i style="height:12px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:8px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:6px"></i><i style="height:16px"></i><i style="height:10px"></i><i style="height:20px"></i><i style="height:8px"></i><i style="height:14px"></i><i style="height:6px"></i></div><span class="dur">0:07</span><div class="said">Message from Codex, project acme-shop. Build is blocked.</div></div>
+<div class="bubble">🚨 <b>Codex</b> · acme-shop · Critical<br>━━━━━━━━━━━━━━<br>📌 <b>Build is blocked</b><br><br>Needs your approval to continue with the migration.<br>━━━━━━━━━━━━━━<br>🕐 10:42 · 21/10</div>
+<div class="bubble">💀 <b>Claude Code</b> · data-pipeline · Heartbeat Lost<br>━━━━━━━━━━━━━━<br>The session stopped reporting. Last beat: 10:31.<br>━━━━━━━━━━━━━━<br>🕐 10:42 · 21/10</div>
+<div class="bubble">🟢 <b>Info</b> · digest<br>━━━━━━━━━━━━━━<br>Held during quiet hours: 2 message(s)<br><br>🟢 <b>Codex</b> · acme-shop<br>Step 4 finished.<br><br>🟢 <b>Claude Code</b> · data-pipeline<br>Step 5 finished.<br>━━━━━━━━━━━━━━<br>🕐 07:30 · 22/10</div>
+</div></body></html>
