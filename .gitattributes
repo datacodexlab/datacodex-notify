@@ -1,0 +1,9 @@
+# Keep LF line endings on every platform so gofmt and golden files match.
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.ico binary
+*.woff2 binary
+*.exe binary
+*.zip binary
